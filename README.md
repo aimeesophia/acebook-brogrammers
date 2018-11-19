@@ -1,1 +1,27 @@
-# acebook-brogrammers
+# Acebook #
+
+## Description ##
+
+### Technologies Used ###
+* ASP.NET Core 2.2
+* ASP.NET MVC 5
+* C#
+* .NET Framework 4.7.2
+* .NET Standard 2
+* NUnit
+* Selenium
+* SQL Express
+* HTML
+* JavaScript
+* jQuery
+* CSS
+* Bootstrap
+* TeamCity
+* Octopus
+* Osprey
+
+## How to Install and Use ##
+
+## How to Run Tests ##
+
+## Contributors ##
