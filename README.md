@@ -29,3 +29,4 @@ Our ![wiki](https://github.com/aimeecraig/acebook-brogrammers/wiki/Acebook-Wiki)
 
 ## Contributors ##
 [Terry Mace](https://github.com/Tolvic)
+[Melissa Sedgwick](https://github.com/melissasedgwick)
