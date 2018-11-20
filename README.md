@@ -28,3 +28,4 @@ Our ![wiki](https://github.com/aimeecraig/acebook-brogrammers/wiki/Acebook-Wiki)
 ## How to Run Tests ##
 
 ## Contributors ##
+[Terry Mace](https://github.com/Tolvic)
