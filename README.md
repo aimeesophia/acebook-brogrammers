@@ -21,7 +21,7 @@
 * Osprey
 
 ### Process ###
-Our ![wiki](https://github.com/aimeecraig/acebook-brogrammers/wiki/Acebook-Wiki) discusses our production process for this challenge.
+Our [wiki](https://github.com/aimeecraig/acebook-brogrammers/wiki/Acebook-Wiki) discusses our production process for this challenge.
 
 ## How to Install and Use ##
 
