@@ -21,12 +21,15 @@
 * Osprey
 
 ### Process ###
-Our ![wiki](https://github.com/aimeecraig/acebook-brogrammers/wiki/Acebook-Wiki) discusses our production process for this challenge.
+Our [wiki](https://github.com/aimeecraig/acebook-brogrammers/wiki/Acebook-Wiki) discusses our production process for this challenge.
 
 ## How to Install and Use ##
 
 ## How to Run Tests ##
 
 ## Contributors ##
-[Terry Mace](https://github.com/Tolvic)
-[John Littler] (https://github.com/JSLittler)
+* [Aimee Craig](https://github.com/aimeecraig)
+* [Terry Mace](https://github.com/Tolvic)
+* [John Littler](https://github.com/JSLittler)
+* [Melissa Sedgwick](https://github.com/melissasedgwick)
+
