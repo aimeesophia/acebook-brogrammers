@@ -28,5 +28,8 @@ Our [wiki](https://github.com/aimeecraig/acebook-brogrammers/wiki/Acebook-Wiki) 
 ## How to Run Tests ##
 
 ## Contributors ##
-[Terry Mace](https://github.com/Tolvic)
-[Melissa Sedgwick](https://github.com/melissasedgwick)
+* [Aimee Craig](https://github.com/aimeecraig)
+* [Terry Mace](https://github.com/Tolvic)
+* [John Littler](https://github.com/JSLittler)
+* [Melissa Sedgwick](https://github.com/melissasedgwick)
+
