@@ -3,8 +3,7 @@ namespace Acebook.Models
 {
     public class Post
     {
-        public Post()
-        {
-        }
+        public long id { get; set; }
+        public string content { get; set; }
     }
 }
