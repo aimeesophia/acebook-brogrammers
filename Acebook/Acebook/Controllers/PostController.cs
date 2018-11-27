@@ -26,7 +26,7 @@ namespace Acebook.Controllers
             //}
         }
 
-        // GET: /<controller>/
+            // GET: /<controller>/
         //    public IActionResult Index()
         //{
         //    return _context.AcebookItems.ToList;
@@ -47,10 +47,10 @@ namespace Acebook.Controllers
         {
             //Views a single post
             ViewBag.Item = _context.posts.Find(id);
-            if (ViewBag.item == null)
-            {
-                return NotFound();
-            }
+                if (ViewBag.item == null)
+                {
+                    return NotFound();
+                }
             return View();
         }
 
@@ -65,29 +65,34 @@ namespace Acebook.Controllers
         {
             _context.posts.Add(new Post { content = content });
             _context.SaveChanges();
-            Response.Redirect("Index");
+            Response.Redirect("GetAll");
         }
 
         // GET: /<controller>/:id/edit
-        public IActionResult Edit()
+        public IActionResult Edit(long id)
         {
+            ViewBag.Item = _context.posts.Find(id);
+            if (ViewBag.item == null)
+            {
+                return NotFound();
+            }
             return View();
         }
 
-        // PATCH: /<controller>/:id
-        //public IActionResult Update()
-        //{
-        //    //Redirect page
-        //}
-
-        // DELETE: /<controller>/:id/delete
-        //[HttpPost]
-        public void Destroy(long id = 1)
+        //PATCH: /<controller>/:id
+        [HttpPost]
+        public void Update(string content, long id)
         {
-            ViewBag.Item = _context.posts.Find(id);
-            _context.Remove(ViewBag.Item);
+            var entry = _context.posts.Find(id);
+            entry.content = content;
             _context.SaveChanges();
             Response.Redirect("../Index");
         }
+
+        // DELETE: /<controller>/:id/delete
+        //public IActionResult Destroy()
+        //{
+        //    //Redirect page
+        //}
     }
 }
