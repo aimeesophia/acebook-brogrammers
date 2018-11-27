@@ -6710,23 +6710,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/aimeecraig/.nuget/packages/": {},
+    "/Users/johnlittler/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook.Tests/Acebook.Tests.csproj",
+      "projectUniqueName": "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_8_Challenges/acebook-brogrammers/Acebook/Acebook.Tests/Acebook.Tests.csproj",
       "projectName": "Acebook.Tests",
-      "projectPath": "/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook.Tests/Acebook.Tests.csproj",
-      "packagesPath": "/Users/aimeecraig/.nuget/packages/",
-      "outputPath": "/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook.Tests/obj",
+      "projectPath": "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_8_Challenges/acebook-brogrammers/Acebook/Acebook.Tests/Acebook.Tests.csproj",
+      "packagesPath": "/Users/johnlittler/.nuget/packages/",
+      "outputPath": "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_8_Challenges/acebook-brogrammers/Acebook/Acebook.Tests/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/aimeecraig/.config/NuGet/NuGet.Config"
+        "/Users/johnlittler/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -6737,8 +6737,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook/Acebook.csproj": {
-              "projectPath": "/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook/Acebook.csproj"
+            "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_8_Challenges/acebook-brogrammers/Acebook/Acebook/Acebook.csproj": {
+              "projectPath": "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_8_Challenges/acebook-brogrammers/Acebook/Acebook/Acebook.csproj"
             }
           }
         }
