@@ -1,5 +1,10 @@
-﻿@page
-@{
+﻿@{
+    ViewData["Title"] = "New";
 }
 
 <h1>Form for creating new posts</h1>
+
+<form action="Create" method="post">
+    <input type="text" name="content" required="" autofocus="" />
+    <input type="submit" />
+</form>

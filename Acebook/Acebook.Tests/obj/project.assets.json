@@ -6710,23 +6710,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/terencemace/.nuget/packages/": {},
+    "/Users/aimeecraig/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/terencemace/projects/acebook-brogrammers/Acebook/Acebook.Tests/Acebook.Tests.csproj",
+      "projectUniqueName": "/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook.Tests/Acebook.Tests.csproj",
       "projectName": "Acebook.Tests",
-      "projectPath": "/Users/terencemace/projects/acebook-brogrammers/Acebook/Acebook.Tests/Acebook.Tests.csproj",
-      "packagesPath": "/Users/terencemace/.nuget/packages/",
-      "outputPath": "/Users/terencemace/projects/acebook-brogrammers/Acebook/Acebook.Tests/obj",
+      "projectPath": "/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook.Tests/Acebook.Tests.csproj",
+      "packagesPath": "/Users/aimeecraig/.nuget/packages/",
+      "outputPath": "/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook.Tests/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/terencemace/.config/NuGet/NuGet.Config"
+        "/Users/aimeecraig/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -6737,8 +6737,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "/Users/terencemace/projects/acebook-brogrammers/Acebook/Acebook/Acebook.csproj": {
-              "projectPath": "/Users/terencemace/projects/acebook-brogrammers/Acebook/Acebook/Acebook.csproj"
+            "/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook/Acebook.csproj": {
+              "projectPath": "/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook/Acebook.csproj"
             }
           }
         }

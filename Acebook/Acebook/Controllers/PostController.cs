@@ -35,15 +35,22 @@ namespace Acebook.Controllers
         //}
 
         [HttpGet]
-        public ActionResult<List<Post>> GetAll()
+        public ActionResult<List<Post>> Index()
         {
-            return _context.posts.ToList();
+            ViewBag.Posts = _context.posts.ToList();
+            return View();
         }
 
         // GET: /<controller>/:id
-        public IActionResult Read()
+        [HttpGet]
+        public IActionResult Read(long id = 1)
         {
             //Views a single post
+            ViewBag.Item = _context.posts.Find(id);
+                if (ViewBag.item == null)
+                {
+                    return NotFound();
+                }
             return View();
         }
 
@@ -53,11 +60,13 @@ namespace Acebook.Controllers
             return View();
         }
 
-        // POST: /<controller>/
-        //public IActionResult Create()
-        //{
-        //    //Redirect page
-        //}
+        [HttpPost]
+        public void Create(string content)
+        {
+            _context.posts.Add(new Post { content = content });
+            _context.SaveChanges();
+            Response.Redirect("GetAll");
+        }
 
         // GET: /<controller>/:id/edit
         public IActionResult Edit()
