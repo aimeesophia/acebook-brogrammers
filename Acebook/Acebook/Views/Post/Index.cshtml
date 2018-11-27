@@ -7,6 +7,6 @@
 <ul>
     @foreach (var post in ViewBag.Posts)
     {
-        <li>@post.content</li>
+        <p><a href="~/Post/Read/@post.id">@post.content</a></p>
     }
 </ul>
