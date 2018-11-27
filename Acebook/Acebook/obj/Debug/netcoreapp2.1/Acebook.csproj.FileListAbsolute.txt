@@ -63,4 +63,4 @@
 /Users/terencemace/projects/acebook-brogrammers/Acebook/Acebook/obj/Debug/netcoreapp2.1/Acebook.dll
 /Users/terencemace/projects/acebook-brogrammers/Acebook/Acebook/obj/Debug/netcoreapp2.1/Acebook.pdb
 /Users/terencemace/projects/acebook-brogrammers/Acebook/Acebook/obj/Debug/netcoreapp2.1/Acebook.csproj.CopyComplete
-/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook/obj/Debug/netcoreapp2.1/Razor/Views/Post/GetAll.g.cshtml.cs
+/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook/obj/Debug/netcoreapp2.1/Razor/Views/Post/Index.g.cshtml.cs

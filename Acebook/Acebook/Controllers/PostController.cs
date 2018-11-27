@@ -35,16 +35,22 @@ namespace Acebook.Controllers
         //}
 
         [HttpGet]
-        public ActionResult<List<Post>> GetAll()
+        public ActionResult<List<Post>> Index()
         {
             ViewBag.Posts = _context.posts.ToList();
             return View();
         }
 
         // GET: /<controller>/:id
-        public IActionResult Read()
+        [HttpGet]
+        public IActionResult Read(long id = 1)
         {
             //Views a single post
+            ViewBag.Item = _context.posts.Find(id);
+                if (ViewBag.item == null)
+                {
+                    return NotFound();
+                }
             return View();
         }
 
