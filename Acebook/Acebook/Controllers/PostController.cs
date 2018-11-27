@@ -84,7 +84,8 @@ namespace Acebook.Controllers
         }
         
         //DELETE: /<controller>/:id/delete
-        public void Destroy(long id = 1)
+        [HttpPost]
+        public void Delete(long id = 1)
         {
             ViewBag.Item = _context.posts.Find(id);
             _context.Remove(ViewBag.Item);

@@ -5,3 +5,11 @@
 <h1>View a single post</h1>
 
 @ViewBag.Item.content
+<br>
+<br>
+<form action="~/Post/Delete/@ViewBag.Item.id" method="post">
+    <button type="submit" class="btn btn-info">Delete Post</button>
+</form>
+<form action="~/Post/Edit/@ViewBag.Item.id" method="get">
+    <button type="submit" class="btn btn-info">Edit Post</button>
+</form>
