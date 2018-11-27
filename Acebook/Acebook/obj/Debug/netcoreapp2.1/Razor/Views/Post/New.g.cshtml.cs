@@ -62,7 +62,7 @@ using Acebook.Models;
             WriteLiteral("\n<h1>Form for creating new posts</h1>\n\n");
             EndContext();
             BeginContext(75, 138, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "edbc4526f7924eeea95b26472942cc03", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fb955e44e66d482188b9d5a8a174da1f", async() => {
                 BeginContext(111, 95, true);
                 WriteLiteral("\n    <input type=\"text\" name=\"content\" required=\"\" autofocus=\"\" />\n    <input type=\"submit\" />\n");
                 EndContext();

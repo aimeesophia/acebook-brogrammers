@@ -69,16 +69,25 @@ namespace Acebook.Controllers
         }
 
         // GET: /<controller>/:id/edit
-        public IActionResult Edit()
+        public IActionResult Edit(long id)
         {
+            ViewBag.Item = _context.posts.Find(id);
+            if (ViewBag.item == null)
+            {
+                return NotFound();
+            }
             return View();
         }
 
-        // PATCH: /<controller>/:id
-        //public IActionResult Update()
-        //{
-        //    //Redirect page
-        //}
+        //PATCH: /<controller>/:id
+        [HttpPost]
+        public void Update(string content, long id)
+        {
+            var entry = _context.posts.Find(id);
+            entry.content = content;
+            _context.SaveChanges();
+            Response.Redirect("../Index");
+        }
 
         // DELETE: /<controller>/:id/delete
         //public IActionResult Destroy()

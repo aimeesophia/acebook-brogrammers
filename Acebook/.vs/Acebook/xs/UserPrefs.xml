@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{3F29D564-00EA-43EC-94B1-DBF526DE7CBB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Acebook/Views/Shared/_Layout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Acebook/Controllers/PostController.cs">
     <Files>
-      <File FileName="Acebook/Controllers/PostController.cs" Line="37" Column="18" />
-      <File FileName="Acebook/Views/Shared/_Layout.cshtml" Line="33" Column="83" />
-      <File FileName="Acebook/Views/Post/Index.cshtml" Line="11" Column="6" NotebookId="1" />
-      <File FileName="Acebook/Views/Post/New.cshtml" Line="8" Column="64" NotebookId="1" />
-      <File FileName="Acebook/Views/Post/Read.cshtml" Line="7" Column="22" NotebookId="1" />
+      <File FileName="Acebook/Controllers/PostController.cs" Line="73" Column="10" />
+      <File FileName="Acebook/Views/Post/New.cshtml" Line="7" Column="1" />
+      <File FileName="Acebook/Views/Post/Edit.cshtml" Line="7" Column="72" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
