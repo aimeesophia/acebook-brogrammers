@@ -59,7 +59,7 @@ namespace Acebook.Controllers
         {
             _context.posts.Add(new Post { content = content });
             _context.SaveChanges();
-            Response.Redirect("GetAll");
+            Response.Redirect("Index");
         }
 
         // GET: /<controller>/:id/edit
