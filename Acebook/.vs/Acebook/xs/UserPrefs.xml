@@ -1,11 +1,10 @@
 ﻿<Properties StartupConfiguration="{3F29D564-00EA-43EC-94B1-DBF526DE7CBB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Acebook/Models/AcebookContext.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Acebook/Controllers/PostController.cs">
     <Files>
-      <File FileName="Acebook/Controllers/PostController.cs" Line="38" Column="49" />
-      <File FileName="Acebook/Startup.cs" Line="31" Column="87" />
-      <File FileName="Acebook/appsettings.json" Line="9" Column="72" />
-      <File FileName="Acebook/Models/Post.cs" Line="10" Column="1" />
-      <File FileName="Acebook/Models/AcebookContext.cs" Line="9" Column="26" />
+      <File FileName="Acebook/Controllers/PostController.cs" Line="60" Column="49" />
+      <File FileName="Acebook/Models/Post.cs" Line="6" Column="11" />
+      <File FileName="Acebook/Views/Post/GetAll.cshtml" Line="11" Column="6" NotebookId="1" />
+      <File FileName="Acebook/Views/Post/New.cshtml" Line="7" Column="21" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

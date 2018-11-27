@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>List all posts</h1>
+
+<ul>
+    @foreach (var post in ViewBag.Posts)
+    {
+        <li>@post.content</li>
+    }
+</ul>

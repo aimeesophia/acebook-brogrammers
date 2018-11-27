@@ -37,7 +37,8 @@ namespace Acebook.Controllers
         [HttpGet]
         public ActionResult<List<Post>> GetAll()
         {
-            return _context.posts.ToList();
+            ViewBag.Posts = _context.posts.ToList();
+            return View();
         }
 
         // GET: /<controller>/:id
@@ -53,11 +54,13 @@ namespace Acebook.Controllers
             return View();
         }
 
-        // POST: /<controller>/
-        //public IActionResult Create()
-        //{
-        //    //Redirect page
-        //}
+        [HttpPost]
+        public void Create(string content)
+        {
+            _context.posts.Add(new Post { content = content });
+            _context.SaveChanges();
+            Response.Redirect("GetAll");
+        }
 
         // GET: /<controller>/:id/edit
         public IActionResult Edit()
