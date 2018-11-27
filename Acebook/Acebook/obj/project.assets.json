@@ -11970,23 +11970,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/aimeecraig/.nuget/packages/": {},
+    "/Users/johnlittler/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook/Acebook.csproj",
+      "projectUniqueName": "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_8_Challenges/acebook-brogrammers/Acebook/Acebook/Acebook.csproj",
       "projectName": "Acebook",
-      "projectPath": "/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook/Acebook.csproj",
-      "packagesPath": "/Users/aimeecraig/.nuget/packages/",
-      "outputPath": "/Users/aimeecraig/Projects/Makers Academy/Week 8/acebook-brogrammers/Acebook/Acebook/obj",
+      "projectPath": "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_8_Challenges/acebook-brogrammers/Acebook/Acebook/Acebook.csproj",
+      "packagesPath": "/Users/johnlittler/.nuget/packages/",
+      "outputPath": "/Users/johnlittler/Desktop/Projects/Makers_Prep/Ruby_Challenges/Week_8_Challenges/acebook-brogrammers/Acebook/Acebook/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/aimeecraig/.config/NuGet/NuGet.Config"
+        "/Users/johnlittler/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"

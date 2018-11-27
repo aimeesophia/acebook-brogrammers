@@ -26,7 +26,7 @@ namespace Acebook.Controllers
             //}
         }
 
-            // GET: /<controller>/
+        // GET: /<controller>/
         //    public IActionResult Index()
         //{
         //    return _context.AcebookItems.ToList;
@@ -47,10 +47,10 @@ namespace Acebook.Controllers
         {
             //Views a single post
             ViewBag.Item = _context.posts.Find(id);
-                if (ViewBag.item == null)
-                {
-                    return NotFound();
-                }
+            if (ViewBag.item == null)
+            {
+                return NotFound();
+            }
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace Acebook.Controllers
         {
             _context.posts.Add(new Post { content = content });
             _context.SaveChanges();
-            Response.Redirect("GetAll");
+            Response.Redirect("Index");
         }
 
         // GET: /<controller>/:id/edit
@@ -81,9 +81,13 @@ namespace Acebook.Controllers
         //}
 
         // DELETE: /<controller>/:id/delete
-        //public IActionResult Destroy()
-        //{
-        //    //Redirect page
-        //}
+        //[HttpPost]
+        public void Destroy(long id = 1)
+        {
+            ViewBag.Item = _context.posts.Find(id);
+            _context.Remove(ViewBag.Item);
+            _context.SaveChanges();
+            Response.Redirect("../Index");
+        }
     }
 }
