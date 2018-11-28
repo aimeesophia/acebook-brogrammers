@@ -18,9 +18,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Post\" />
-    <Folder Include="Views\User\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Views\User\New.cs" />
   </ItemGroup>
 </Project>
