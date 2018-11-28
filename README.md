@@ -36,6 +36,43 @@ git clone https://github.com/aimeecraig/acebook-brogrammers.git
 cd acebook-brogrammers
 ```
 
+## Database Migration ##
+
+1. Use Homebrew to install the PostgresSQL
+
+```
+$> brew install postgresql
+```
+
+2. Allow Homebrew to start and stop the Postgres service
+
+```
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+```
+###Set up databases
+
+1. Open psql  in Terminal
+```
+psql
+```
+2. Create the database
+```
+CREATE DATABASE acebook;
+```
+
+3. Navigate into acebook database
+```
+\c acebook
+```
+4. Create the posts table
+```
+CREATE TABLE posts (id SERIAL PRIMARY KEY, content VARCHAR(200));
+```
+5. Create the users table
+```
+CREATE TABLE users (id SERIAL PRIMARY KEY, username VARCHAR(20), password VARCHAR(200));
+```
 
 ## How to Run Tests ##
 
