@@ -23,6 +23,7 @@ namespace Acebook.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Username = HttpContext.Session.GetString("username");
             return View();
         
         }
@@ -30,10 +31,11 @@ namespace Acebook.Controllers
         [HttpPost]
         public void SignIn(string username)
         {
+            HttpContext.Session.SetString("username", username);
             //var user = _context.users.Where(users => users.username.Matches("melissa13"));
-            ////ViewBag.User = user;
-            ////SET SESSION VARIABLE HERE
-            ////Response.Redirect("../Post");
+            //ViewBag.User = user;
+            //SET SESSION VARIABLE HERE
+            Response.Redirect("../Post");
         }
 
         // GET: /<controller>/
@@ -48,6 +50,12 @@ namespace Acebook.Controllers
             _context.users.Add(new User { username = username, password = password });
             _context.SaveChanges();
             HttpContext.Session.SetString("username", username);
+            Response.Redirect("../Post");
+        }
+
+        public void SignOut()
+        {
+            HttpContext.Session.Clear();
             Response.Redirect("../Post");
         }
     }

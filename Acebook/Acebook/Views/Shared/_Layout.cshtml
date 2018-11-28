@@ -32,8 +32,12 @@
                     <ul class="nav navbar-nav">
                         <li><a asp-area="" asp-controller="Post" asp-action="Index">View All</a></li>
                         <li><a asp-area="" asp-controller="Post" asp-action="New">New Post</a></li>
-                        <li><a asp-area="" asp-controller="User" asp-action="New">Register</a></li>
-                        <li><a asp-area="" asp-controller="" asp-action="">@ViewData["Username"]</a></li>
+                        @if (@ViewBag.Username == null)
+                        {<li><a asp-area="" asp-controller="User" asp-action="New">Register</a></li>
+                         <li><a asp-area="" asp-controller="User" asp-action="Index">Sign In</a></li>}
+                        else
+                        {<li><a asp-area="" asp-controller="User" asp-action="SignOut">Sign Out</a></li>}
+                        <li><a asp-area="" asp-controller="" asp-action="">@ViewBag.Username</a></li>
                     </ul>
                 </div>
             </div>
