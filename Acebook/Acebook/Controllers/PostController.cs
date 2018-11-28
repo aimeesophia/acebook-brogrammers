@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Session;
+using Microsoft.AspNetCore.Http;
 using Acebook.Models;
 
 
@@ -32,6 +34,7 @@ namespace Acebook.Controllers
         public ActionResult<List<Post>> Index()
         {
             ViewBag.Posts = _context.posts.ToList();
+            ViewBag.Username = HttpContext.Session.GetString("username");
             return View();
         }
 
