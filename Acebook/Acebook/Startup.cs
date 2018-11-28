@@ -30,7 +30,10 @@ namespace Acebook
                 services.AddDbContext<AcebookContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
                 services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-           
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +52,7 @@ namespace Acebook
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
