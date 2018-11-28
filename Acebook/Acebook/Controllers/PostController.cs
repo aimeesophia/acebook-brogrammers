@@ -43,6 +43,7 @@ namespace Acebook.Controllers
         public IActionResult Read(long id = 1)
         {
             //Views a single post
+            ViewBag.Username = HttpContext.Session.GetString("username");
             ViewBag.Item = _context.posts.Find(id);
                 if (ViewBag.item == null)
                 {
@@ -54,6 +55,7 @@ namespace Acebook.Controllers
         // GET: /<controller>/new
         public IActionResult New()
         {
+            ViewBag.Username = HttpContext.Session.GetString("username");
             return View();
         }
 
@@ -68,6 +70,7 @@ namespace Acebook.Controllers
         // GET: /<controller>/:id/edit
         public IActionResult Edit(long id)
         {
+            ViewBag.Username = HttpContext.Session.GetString("username");
             ViewBag.Item = _context.posts.Find(id);
             if (ViewBag.item == null)
             {
