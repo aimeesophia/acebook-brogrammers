@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.Text;
+using System.Security.Cryptography;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,35 +27,58 @@ namespace Acebook.Controllers
         public IActionResult Index()
         {
             ViewBag.Username = HttpContext.Session.GetString("username");
+            ViewBag.Message = TempData["FlashMessage"];
             return View();
         
         }
 
         [HttpPost]
-        public void SignIn(string username)
+        public void SignIn(string username, string password)
         {
             var user = _context.users.SingleOrDefault(c => c.username == username);
-            if (user != null) {
+            if (user != null && Acebook.Models.User.AuthenticateSignIn(user.password, password)) {
                 HttpContext.Session.SetString("username", user.username);
                 Response.Redirect("../Post");
             } else {
+                TempData["FlashMessage"] = "Login credentials do not match.";
                 Response.Redirect("https://localhost:5001/User");
             }
+
+            //var decrypted = Acebook.Models.Encryption.DecryptPassword(user.password);
+            //if (user == null) {
+            //    Response.Redirect("https://localhost:5001/User");
+            //} else if (password != decrypted) {
+            //    Response.Redirect("https://localhost:5001/User");
+            //} else {
+            //    HttpContext.Session.SetString("username", user.username);
+            //    Response.Redirect("../Post");
+            //}
         }
 
         // GET: /<controller>/
         public IActionResult New()
         {
+            ViewBag.Message = TempData["FlashMessage"];
             return View();
         }
 
         [HttpPost]
         public void Create(string username, string password)
         {
-            _context.users.Add(new User { username = username, password = password });
-            _context.SaveChanges();
-            HttpContext.Session.SetString("username", username);
-            Response.Redirect("../Post");
+            var user = _context.users.SingleOrDefault(c => c.username == username);
+            if (user != null)
+            {
+                TempData["FlashMessage"] = "Username already in use";
+                Response.Redirect("New");
+            }
+            else
+            {
+              var encrypted = Acebook.Models.Encryption.EncryptPassword(password);
+              _context.users.Add(new User { username = username, password = encrypted });
+              _context.SaveChanges();
+              HttpContext.Session.SetString("username", username);
+              Response.Redirect("../Post");
+            }
         }
 
         public void SignOut()
