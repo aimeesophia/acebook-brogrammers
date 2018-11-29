@@ -16,7 +16,12 @@ namespace Acebook.Models
         //    lblEncryptedText.Text = this.Encrypt(txtOriginalText.Text.Trim());
         //}
 
-        public string Encrypt(string clearText)
+        public static string EncryptPassword(string password) 
+        {
+            return Encrypt(password);
+        }
+
+        private static string Encrypt(string clearText)
         {
             string EncryptionKey = "MAKV2SPBNI99212";
             byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
@@ -43,7 +48,12 @@ namespace Acebook.Models
         //    lblDecryptedText.Text = this.Decrypt(txtEncryptedText.Text.Trim());
         //}
 
-        public string Decrypt(string cipherText)
+        public static string DecryptPassword(string password)
+        {
+            return Decrypt(password);
+        }
+
+        private static string Decrypt(string cipherText)
         {
             string EncryptionKey = "MAKV2SPBNI99212";
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
