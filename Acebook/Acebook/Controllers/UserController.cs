@@ -31,11 +31,13 @@ namespace Acebook.Controllers
         [HttpPost]
         public void SignIn(string username)
         {
-            HttpContext.Session.SetString("username", username);
-            //var user = _context.users.Where(users => users.username.Matches("melissa13"));
-            //ViewBag.User = user;
-            //SET SESSION VARIABLE HERE
-            Response.Redirect("../Post");
+            var user = _context.users.SingleOrDefault(c => c.username == username);
+            if (user != null) {
+                HttpContext.Session.SetString("username", user.username);
+                Response.Redirect("../Post");
+            } else {
+                Response.Redirect("https://localhost:5001/User");
+            }
         }
 
         // GET: /<controller>/
