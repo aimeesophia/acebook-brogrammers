@@ -34,12 +34,16 @@ namespace Acebook.Controllers
         [HttpPost]
         public void SignIn(string username, string password)
         {
-            var user = _context.users.SingleOrDefault(c => c.username == username && c.password == password);
-            if (user != null) {
+            var instance = new User();
+            var user = _context.users.SingleOrDefault(c => c.username == username);
+            var decrypted = instance.Decrypt(user.password);
+            if (user == null) {
+                Response.Redirect("https://localhost:5001/User");
+            } else if (password != decrypted) {
+                Response.Redirect("https://localhost:5001/User");
+            } else {
                 HttpContext.Session.SetString("username", user.username);
                 Response.Redirect("../Post");
-            } else {
-                Response.Redirect("https://localhost:5001/User");
             }
         }
 
