@@ -63,7 +63,7 @@ namespace Acebook.Controllers
         public void Create(string content)
         {
             ViewBag.Username = HttpContext.Session.GetString("username");
-            _context.posts.Add(new Post { content = content, username = ViewBag.username});
+            _context.posts.Add(new Post { content = content, username = ViewBag.username });
             _context.SaveChanges();
             Response.Redirect("Index");
         }
