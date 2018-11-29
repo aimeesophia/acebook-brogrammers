@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using Acebook.Models;
 
 namespace Tests
 {
@@ -10,9 +11,9 @@ namespace Tests
         }
 
         [Test]
-        public void Test1()
+        public void ReturnsTrueIfCredentialsMatch()
         {
-            Assert.Pass();
+            //Requires testing database.
         }
     }
 }
