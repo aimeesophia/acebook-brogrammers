@@ -14,14 +14,10 @@ namespace Acebook.Models
         public string username { get; set; }
         public string password { get; set; }
 
-        public static bool AuthenticateSignIn(string username, string password, string enteredpassword)
+        public static bool AuthenticateSignIn(string password, string enteredpassword)
         {
             var decrypted = Acebook.Models.Encryption.DecryptPassword(password);
-            if (username == null)
-            {
-                return false;
-            }
-            else if (enteredpassword != decrypted)
+            if (enteredpassword != decrypted)
             {
                 return false;
             }

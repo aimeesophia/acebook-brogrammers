@@ -35,7 +35,7 @@ namespace Acebook.Controllers
         public void SignIn(string username, string password)
         {
             var user = _context.users.SingleOrDefault(c => c.username == username);
-            if (Acebook.Models.User.AuthenticateSignIn(user.username, user.password, password)) {
+            if (user != null && Acebook.Models.User.AuthenticateSignIn(user.password, password)) {
                 HttpContext.Session.SetString("username", user.username);
                 Response.Redirect("../Post");
             } else {
