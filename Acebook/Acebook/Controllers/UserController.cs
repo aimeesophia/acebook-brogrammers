@@ -27,6 +27,7 @@ namespace Acebook.Controllers
         public IActionResult Index()
         {
             ViewBag.Username = HttpContext.Session.GetString("username");
+            ViewBag.Message = TempData["FlashMessage"];
             return View();
         
         }
@@ -39,6 +40,7 @@ namespace Acebook.Controllers
                 HttpContext.Session.SetString("username", user.username);
                 Response.Redirect("../Post");
             } else {
+                TempData["FlashMessage"] = "Login credentials do not match.";
                 Response.Redirect("https://localhost:5001/User");
             }
 
