@@ -5,12 +5,27 @@
 
 <h1>List all posts</h1>
 
+Old:
 <ul>
     @foreach (var post in ViewBag.Posts)
     {
+        @post;
+        @*<p><a href="~/Post/Read/@post.id">@post.content</a></p>
+        <p>Posted by @post.username</p>
+        <br>*@
+    }
+    
+</ul>
+
+New:
+<ul>
+    @foreach (var post in ViewBag.NewPosts)
+    {
+        @post;
         <p><a href="~/Post/Read/@post.id">@post.content</a></p>
         <p>Posted by @post.username</p>
         <br>
     }
-    
 </ul>
+
+@ViewBag.NewPosts

@@ -35,6 +35,21 @@ namespace Acebook.Controllers
         {
             ViewBag.Posts = _context.posts.ToList();
             ViewBag.Username = HttpContext.Session.GetString("username");
+            var posts = (
+                from p in _context.posts
+                join u in _context.users
+                on p.userid equals u.id
+                select new
+                {
+                    id = p.id,
+                    content = p.content,
+                    username = u.username
+                });
+            ViewBag.NewPosts = posts;
+            //_context.posts.Join(
+            //    from userid in _context.posts
+            //    join id in _context.users
+            //)
             return View();
         }
 
@@ -62,8 +77,8 @@ namespace Acebook.Controllers
         [HttpPost]
         public void Create(string content)
         {
-            ViewBag.Username = HttpContext.Session.GetString("username");
-            _context.posts.Add(new Post { content = content, username = ViewBag.username });
+            var userid = HttpContext.Session.GetInt32("id") ?? default(int);
+            _context.posts.Add(new Post { content = content, userid = userid });
             _context.SaveChanges();
             Response.Redirect("Index");
         }

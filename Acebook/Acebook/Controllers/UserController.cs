@@ -38,21 +38,12 @@ namespace Acebook.Controllers
             var user = _context.users.SingleOrDefault(c => c.username == username);
             if (user != null && Acebook.Models.User.AuthenticateSignIn(user.password, password)) {
                 HttpContext.Session.SetString("username", user.username);
+                HttpContext.Session.SetInt32("id", user.id);
                 Response.Redirect("../Post");
             } else {
                 TempData["FlashMessage"] = "Login credentials do not match.";
                 Response.Redirect("https://localhost:5001/User");
             }
-
-            //var decrypted = Acebook.Models.Encryption.DecryptPassword(user.password);
-            //if (user == null) {
-            //    Response.Redirect("https://localhost:5001/User");
-            //} else if (password != decrypted) {
-            //    Response.Redirect("https://localhost:5001/User");
-            //} else {
-            //    HttpContext.Session.SetString("username", user.username);
-            //    Response.Redirect("../Post");
-            //}
         }
 
         // GET: /<controller>/
@@ -73,11 +64,13 @@ namespace Acebook.Controllers
             }
             else
             {
-              var encrypted = Acebook.Models.Encryption.EncryptPassword(password);
-              _context.users.Add(new User { username = username, password = encrypted });
-              _context.SaveChanges();
-              HttpContext.Session.SetString("username", username);
-              Response.Redirect("../Post");
+                var encrypted = Acebook.Models.Encryption.EncryptPassword(password);
+                _context.users.Add(new User { username = username, password = encrypted });
+                _context.SaveChanges();
+                var newuser = _context.users.SingleOrDefault(c => c.username == username);
+                HttpContext.Session.SetString("username", newuser.username);
+                HttpContext.Session.SetInt32("id", newuser.id);
+                Response.Redirect("../Post");
             }
         }
 

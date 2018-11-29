@@ -8,10 +8,5 @@ namespace Acebook.Models
         }
         public DbSet<Post> posts { get; set; }
         public DbSet<User> users { get; set; }
-
-        // protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
-        // {
-        //     optionBuilder.UseNpgsql("");
-        // }
     }
 }

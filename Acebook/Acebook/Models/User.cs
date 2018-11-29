@@ -10,21 +10,14 @@ namespace Acebook.Models
 {
     public class User
     {
-        public long id { get; set; }
+        public int id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
 
         public static bool AuthenticateSignIn(string password, string enteredpassword)
         {
             var decrypted = Acebook.Models.Encryption.DecryptPassword(password);
-            if (enteredpassword != decrypted)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return enteredpassword == decrypted;
         }
     }
 }
