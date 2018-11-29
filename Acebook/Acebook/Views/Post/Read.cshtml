@@ -6,6 +6,8 @@
 
 @ViewBag.Item.content
 <br>
+<p>Posted by @ViewBag.Item.username</p>
+<br>
 <br>
 <form action="~/Post/Delete/@ViewBag.Item.id" method="post">
     <button type="submit" class="btn btn-info">Delete Post</button>
