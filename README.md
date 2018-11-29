@@ -36,8 +36,42 @@ git clone https://github.com/aimeecraig/acebook-brogrammers.git
 cd acebook-brogrammers
 ```
 
+## How to Set Up Databases ##
 
-## How to Run Tests ##
+To install PostgreSQL:
+```
+brew install postgresql
+```
+```
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+```
+Once you have PostgreSQL installed, follow these instructions to set up databases for this project:
+
+1. Connect to psql
+```
+psql
+```
+2. Create the acebook database
+```
+CREATE DATABASE acebook;
+```
+3. Connect to the acebook database
+```
+\c acebook
+```
+4. Create the posts table
+```
+CREATE TABLE posts(id SERIAL PRIMARY KEY, content VARCHAR(200));
+```
+5. Create the users table
+```
+CREATE TABLE users(id SERIAL PRIMARY KEY, username VARCHAR(20), password VARCHAR(200));
+```
+6. Ensure that the DefaultConnection in appsettings.json refers to your connection (you may have to update the Username). e.g.:
+```
+"Host=localhost;Port=5432;Username=YOUR_USERNAME_HERE;Database=acebook;"
+```
 
 ## Learning Objectives ##
 1. I can TDD fizzbuzz in C#
