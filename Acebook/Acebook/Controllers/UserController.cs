@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.Text;
+using System.Security.Cryptography;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,9 +32,9 @@ namespace Acebook.Controllers
         }
 
         [HttpPost]
-        public void SignIn(string username)
+        public void SignIn(string username, string password)
         {
-            var user = _context.users.SingleOrDefault(c => c.username == username);
+            var user = _context.users.SingleOrDefault(c => c.username == username && c.password == password);
             if (user != null) {
                 HttpContext.Session.SetString("username", user.username);
                 Response.Redirect("../Post");
@@ -49,7 +52,9 @@ namespace Acebook.Controllers
         [HttpPost]
         public void Create(string username, string password)
         {
-            _context.users.Add(new User { username = username, password = password });
+            var instance = new User();
+            var encrypted = instance.Encrypt(password);
+            _context.users.Add(new User { username = username, password = encrypted });
             _context.SaveChanges();
             HttpContext.Session.SetString("username", username);
             Response.Redirect("../Post");
