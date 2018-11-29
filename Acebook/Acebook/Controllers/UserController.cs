@@ -43,16 +43,26 @@ namespace Acebook.Controllers
         // GET: /<controller>/
         public IActionResult New()
         {
+            ViewBag.Message = TempData["FlashMessage"];
             return View();
         }
 
         [HttpPost]
         public void Create(string username, string password)
         {
-            _context.users.Add(new User { username = username, password = password });
-            _context.SaveChanges();
-            HttpContext.Session.SetString("username", username);
-            Response.Redirect("../Post");
+            var user = _context.users.SingleOrDefault(c => c.username == username);
+            if (user != null)
+            {
+                TempData["FlashMessage"] = "Username already in use";
+                Response.Redirect("New");
+            }
+            else
+            {
+                _context.users.Add(new User { username = username, password = password });
+                _context.SaveChanges();
+                HttpContext.Session.SetString("username", username);
+                Response.Redirect("../Post");
+            }
         }
 
         public void SignOut()
