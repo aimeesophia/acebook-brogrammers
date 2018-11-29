@@ -35,7 +35,7 @@ namespace Acebook.Controllers
         public void SignIn(string username, string password)
         {
             var user = _context.users.SingleOrDefault(c => c.username == username);
-            var decrypted = Acebook.Models.User.DecryptPassword(user.password);
+            var decrypted = Acebook.Models.Encryption.DecryptPassword(user.password);
             if (user == null) {
                 Response.Redirect("https://localhost:5001/User");
             } else if (password != decrypted) {
@@ -55,7 +55,7 @@ namespace Acebook.Controllers
         [HttpPost]
         public void Create(string username, string password)
         {
-            var encrypted = Acebook.Models.User.EncryptPassword(password);
+            var encrypted = Acebook.Models.Encryption.EncryptPassword(password);
             _context.users.Add(new User { username = username, password = encrypted });
             _context.SaveChanges();
             HttpContext.Session.SetString("username", username);
