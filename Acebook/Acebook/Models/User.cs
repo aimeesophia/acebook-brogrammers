@@ -2,6 +2,9 @@
 using System.IO;
 using System.Text;
 using System.Security.Cryptography;
+using Microsoft.EntityFrameworkCore;
+using Acebook.Models;
+using Acebook.Controllers;
 
 namespace Acebook.Models
 {
@@ -10,5 +13,22 @@ namespace Acebook.Models
         public long id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
+
+        public static bool AuthenticateSignIn(string username, string password, string enteredpassword)
+        {
+            var decrypted = Acebook.Models.Encryption.DecryptPassword(password);
+            if (username == null)
+            {
+                return false;
+            }
+            else if (enteredpassword != decrypted)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

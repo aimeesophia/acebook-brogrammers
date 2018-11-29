@@ -35,15 +35,22 @@ namespace Acebook.Controllers
         public void SignIn(string username, string password)
         {
             var user = _context.users.SingleOrDefault(c => c.username == username);
-            var decrypted = Acebook.Models.Encryption.DecryptPassword(user.password);
-            if (user == null) {
-                Response.Redirect("https://localhost:5001/User");
-            } else if (password != decrypted) {
-                Response.Redirect("https://localhost:5001/User");
-            } else {
+            if (Acebook.Models.User.AuthenticateSignIn(user.username, user.password, password)) {
                 HttpContext.Session.SetString("username", user.username);
                 Response.Redirect("../Post");
+            } else {
+                Response.Redirect("https://localhost:5001/User");
             }
+
+            //var decrypted = Acebook.Models.Encryption.DecryptPassword(user.password);
+            //if (user == null) {
+            //    Response.Redirect("https://localhost:5001/User");
+            //} else if (password != decrypted) {
+            //    Response.Redirect("https://localhost:5001/User");
+            //} else {
+            //    HttpContext.Session.SetString("username", user.username);
+            //    Response.Redirect("../Post");
+            //}
         }
 
         // GET: /<controller>/
