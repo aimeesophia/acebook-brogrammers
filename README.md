@@ -68,9 +68,9 @@ CREATE TABLE posts(id SERIAL PRIMARY KEY, content VARCHAR(200));
 ```
 CREATE TABLE users(id SERIAL PRIMARY KEY, username VARCHAR(20), password VARCHAR(200));
 ```
-6. Ensure that the DefaultConnection in appsettings.json refers to your connection (you may have to update the Username). e.g.:
+6. Ensure that the DefaultConnection in appsettings.json refers to your connection (you may have to update the Username and Password). e.g.:
 ```
-"Host=localhost;Port=5432;Username=YOUR_USERNAME_HERE;Database=acebook;"
+"Host=localhost;Port=5432;Username=YOUR_USERNAME_HERE;Password=YOUR_PASSWORD_HERE;Database=acebook;"
 ```
 
 ## Learning Objectives ##
