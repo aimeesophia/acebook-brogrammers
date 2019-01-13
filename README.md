@@ -62,7 +62,7 @@ CREATE DATABASE acebook;
 ```
 4. Create the posts table
 ```
-CREATE TABLE posts(id SERIAL PRIMARY KEY, content VARCHAR(200));
+CREATE TABLE posts(id SERIAL PRIMARY KEY, content VARCHAR(200), username VARCHAR(20);
 ```
 5. Create the users table
 ```
